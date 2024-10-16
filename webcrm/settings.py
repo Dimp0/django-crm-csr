@@ -25,17 +25,12 @@ SECRET_KEY = 'j1c=6$s-dh#$ywt@(q4cm=j&0c*!0x!e-qm6k1%yoliec(15tn'
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Database
+import dj_database_url
+
 DATABASES = {
-    'default': {    # for MySQl
-        'ENGINE': 'django.db.backends.mysql',
-        # "ENGINE": "django.db.backends.postgresql", # for PostgreSQL
-        'PORT': '3306',
-        # 'PORT': '5432',   # for PostgreSQL
-        'NAME': 'crm_db',
-        'USER': '<specify user>',
-        'PASSWORD': '<specify password>',
-        'HOST': '<specify host>',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://csr_crm_cd0i_user:CyFmh1hQFBufudnK1eYYfVG2HaoiugBK@dpg-cs7m8456l47c73c5titg-a.oregon-postgres.render.com/csr_crm_cd0i'
+    )
 }
 
 EMAIL_HOST = '<specify host>'   # 'smtp.example.com'
