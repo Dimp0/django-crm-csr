@@ -3,6 +3,7 @@ from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 import decouple
 
+
 from crm.settings import *          # NOQA
 from massmail.settings import *     # NOQA
 from common.settings import *       # NOQA
@@ -23,7 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'j1c=6$s-dh#$ywt@(q4cm=j&0c*!0x!e-qm6k1%yoliec(15tn'
 
 # Add your hosts to the list.
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = [
+    'django-crm-csr.onrender.com',
+    'localhost',  # Optional: For local development
+    '127.0.0.1'   # Optional: For local development
+]
+
 
 # Database
 import dj_database_url
