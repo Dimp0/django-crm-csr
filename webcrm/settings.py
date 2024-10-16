@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+import decouple
 
 from crm.settings import *          # NOQA
 from massmail.settings import *     # NOQA
@@ -22,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'j1c=6$s-dh#$ywt@(q4cm=j&0c*!0x!e-qm6k1%yoliec(15tn'
 
 # Add your hosts to the list.
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [*]
 
 # Database
 import dj_database_url
@@ -33,14 +34,14 @@ DATABASES = {
     )
 }
 
-EMAIL_HOST = '<specify host>'   # 'smtp.example.com'
-EMAIL_HOST_PASSWORD = '<specify password>'
-EMAIL_HOST_USER = 'crm@example.com'
-EMAIL_PORT = 587
-EMAIL_SUBJECT_PREFIX = 'CRM: '
-EMAIL_USE_TLS = True
-SERVER_EMAIL = 'crm@example.com'
-DEFAULT_FROM_EMAIL = 'crm@example.com'
+# EMAIL_HOST = '<specify host>'   # 'smtp.example.com'
+# EMAIL_HOST_PASSWORD = '<specify password>'
+# EMAIL_HOST_USER = 'crm@example.com'
+# EMAIL_PORT = 587
+# EMAIL_SUBJECT_PREFIX = 'CRM: '
+# EMAIL_USE_TLS = True
+# SERVER_EMAIL = 'crm@example.com'
+# DEFAULT_FROM_EMAIL = 'crm@example.com'
 
 ADMINS = [("<Admin1>", "<admin1_box@example.com>")]   # specify admin
 
@@ -150,11 +151,11 @@ SITE_ID = 1
 
 SECURE_HSTS_SECONDS = 0  # set to 31536000 for production server
 # set to True for production server
-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-SECURE_HSTS_PRELOAD = False
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+# SECURE_SSL_REDIRECT = False
+# SESSION_COOKIE_SECURE = False
+# CSRF_COOKIE_SECURE = False
+# SECURE_HSTS_PRELOAD = False
 
 
 # ---- CRM settings ---- #
